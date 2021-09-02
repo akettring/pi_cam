@@ -109,7 +109,7 @@ Now set up the directories to receive files from the pi.
     rclone mkdir dropbox_remote:pi_vids
 
 
-The last step is to edit rc.local
+The last step is to edit rc.local to e
 
     sudo cp /etc/rc.local ~/rc.local.bash
     sudo nano /etc/rc.local
