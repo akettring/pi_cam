@@ -1,6 +1,6 @@
 # pi_cam
 
-This contains the instructions and some scripts for setting up a security camera on a raspberry pi.
+This contains the instructions, configuration files, and scripts for setting up a security camera on a raspberry pi.
 
 Why would anyone want to do this ?
 - Privacy. Sync to *your* choice of cloud storage provider.
