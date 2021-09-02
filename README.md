@@ -114,9 +114,9 @@ The last step is to edit rc.local
 
 Add the following lines:
 
-        motion
+    motion
 
-        /home/pi/bin/rclone_sync.sh
+    /home/pi/bin/rclone_sync.sh
 
 
 Restart your pi and you should be good to go!
