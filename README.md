@@ -1,11 +1,6 @@
 # pi_cam
 
-This README contains the instructions for setting up a security camera on a raspberry pi.
-
-The repository also has scripts and configuration files that bring it all together.
-
-These instructions cover syncing with both Dropbox and Google Drive using rsync, which is surprisingly easy.
-
+This contains the instructions and some scripts for setting up a security camera on a raspberry pi.
 
 Why would anyone want to do this ?
 - Privacy. Sync to *your* choice of cloud storage provider.
@@ -14,6 +9,7 @@ Why would anyone want to do this ?
 - Edutainment. Learn about raspberry pi programming!
     
     
+These instructions cover syncing with both Dropbox and Google Drive using rsync, which is surprisingly easy.
 
 
 ## Step 0. Prepare the pi
