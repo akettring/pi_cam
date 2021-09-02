@@ -1,6 +1,6 @@
 # pi_cam
 
-This contains the instructions, configuration files, and scripts for setting up a security camera on a raspberry pi.
+This repo has instructions, configuration files, and scripts for setting up a security camera on a raspberry pi.
 
 Why would anyone want to do this ?
 - Privacy. Sync to *your* choice of cloud storage provider.
@@ -109,12 +109,12 @@ Now set up the directories to receive files from the pi.
     rclone mkdir dropbox_remote:pi_vids
 
 
-The last step is to edit rc.local to e
+The last step is to edit rc.local so that motion and rsync run at startup.
 
     sudo cp /etc/rc.local ~/rc.local.bash
     sudo nano /etc/rc.local
 
-Add the following lines BEFORE `exit 0`:
+Add the following lines BEFORE `exit 0` as in the provided example:
 
     motion
 
