@@ -10,31 +10,33 @@ Why would anyone want to do this ?
 - Budget. No monthly/yearly fees. Parts for under $100.
 - Edutainment. Learn about raspberry pi programming!
     
-These instructions cover syncing with Dropbox using rsync, which is surprisingly easy.
+These instructions cover syncing with Dropbox using rsync, which is surprisingly easy. Also tested for Goole Drive.
 
-I have also tested these instructions for Google Drive. There is no difference.
+
 
 
 ## Step 0. Prepare the pi
 
-Buy a raspberry pi and whatever camera you like, USB or ribbon cable.
+- Buy a raspberry pi and whatever camera you like, USB or ribbon cable.
+- Install the default Raspbian OS. Headless/minimal installation never works for me.
+- Boot and set up wifi. I suggest to enable SSH using `raspi-config` or in the preferences menu, and then go headless from this point.
+- Clone the contents of this git repo into your home directory. It may be necesseary to run `chmod +x /home/pi/bin/ -Rv`
 
-Install the default Raspbian OS.
 
-Boot and set up wifi. I suggest to enable SSH using `raspi-config` or in the preferences menu.
-
-Clone the contents of this git repo into your home directory. It may be necesseary to run `chmod +x /home/pi/bin/ -Rv`
 
 
 ## Step 1. Set up the cam
 
 
-Make the following directories on your raspberry pi.
-The camera first dumps files into the pi_cam folder, then move_files.sh splits them.
+Make the following directories on your raspberry pi. 
+The camera first dumps files into the pi_cam folder, and then move_files.sh splits them to pics and vids.
+This is especially convenient if you wish to send pics and vids to different cloud services.
 
     mkdir /home/pi/pi_cam
     mkdir /home/pi/pi_pics
     mkdir /home/pi/pi_vids
+
+Inistall motion and configure.
 
     sudo apt install motion
     cp /etc/motion/motion.conf ~/motion.conf.bak
@@ -61,9 +63,10 @@ The provided `motion.conf` has the following changes made:
     on_event_end /home/pi/bin/red_led_off.sh
     on_movie_end /home/pi/bin/move_files.sh
 
-Then check that it is working properly. Files show up. Lights flash.
+Test that it is working properly. Files should show up. Lights should flash.
 
     sudo motion -n
+
 
 
 
@@ -94,7 +97,6 @@ An example 'rclone config':
     n) No
     y/n> y
 
-
 The host machine will generate a token that needs to be passed to the pi, such as:
 
     {"access_token":"XXXXXXXXXXXXXX","token_type":"bearer","expiry":"XXXXXXXX"}
@@ -110,6 +112,10 @@ Now set up the directories to receive files from the pi.
     rclone mkdir dropbox_remote:pi_vids
 
 
+
+
+## Step 3. Finalize the installation
+
 The last step is to edit rc.local so that motion and rsync run at startup.
 
     sudo cp /etc/rc.local ~/rc.local.bash
@@ -118,9 +124,7 @@ The last step is to edit rc.local so that motion and rsync run at startup.
 Add the following lines BEFORE `exit 0` as in the provided example:
 
     motion
-
     /home/pi/bin/rclone_sync.sh
-
 
 Restart your pi and you should be good to go!
 
