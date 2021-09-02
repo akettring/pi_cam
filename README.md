@@ -14,7 +14,9 @@ Why would anyone want to do this instead of buying ?
 ## Step 0. Prepare the pi
 
 Buy a raspberry pi and whatever camera you like, USB or ribbon cable ... doesn't matter.
+
 Install the default Raspbian OS. Boot
+
 If you are a pro and you can get wifi to work "out of the box" headless, my hat goes off to you.
 
 
