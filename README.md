@@ -114,7 +114,7 @@ The last step is to edit rc.local
     sudo cp /etc/rc.local ~/rc.local.bash
     sudo nano /etc/rc.local
 
-Add the following lines:
+Add the following lines BEFORE `exit 0`:
 
     motion
 
