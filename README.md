@@ -1,21 +1,26 @@
 # pi_cam
-Raspberry pi security camera
 
-Why would anyone want to do this instead of buying ?
-- Privacy. Sync to *your* favorite cloud storage provider.
+This README contains the instructions for setting up a security camera on a raspberry pi.
+
+The repository also has scripts and configuration files that bring it all together.
+
+These instructions cover syncing with both Dropbox and Google Drive using rsync, which is surprisingly easy.
+
+
+Why would anyone want to do this ?
+- Privacy. Sync to *your* choice of cloud storage provider.
 - Security. Sync to *multiple* cloud folders.
 - Budget. No monthly/yearly fees. Parts for under $100.
-- Edutainment. Learn about raspberry pi and BASH scripting!
+- Edutainment. Learn about raspberry pi programming!
     
     
-
 
 
 ## Step 0. Prepare the pi
 
 Buy a raspberry pi and whatever camera you like, USB or ribbon cable ... doesn't matter.
 
-Install the default Raspbian OS. Boot
+Install the default Raspbian OS. Boot and set up wifi. Enable SSH using `raspi-config` or in the preferences menu.
 
 If you are a pro and you can get wifi to work "out of the box" headless, my hat goes off to you.
 
@@ -26,7 +31,7 @@ mkdir /home/pi/pi_cam
 mkdir /home/pi/pi_pics
 mkdir /home/pi/pi_vids
 
-## Step 2. Set up the cam
+## Step 1. Set up the cam
 
 sudo apt install motion
 
@@ -54,7 +59,7 @@ sudo nano /etc/motion/motion.conf
 sudo motion -n
 
 
-## Step 3. sync using rclone
+## Step 2. sync using rclone
 
 sudo apt-get install rclone
 
