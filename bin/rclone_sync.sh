@@ -26,7 +26,7 @@ do
 
     # sync the folders
     su -c 'rclone sync /home/pi/pi_pics/ dropbox_remote:pi_pics -P' pi
-    su -c 'rclone sync /home/pi/pi_vids/ gdrive_remote:pi_vids -P' pi
+    su -c 'rclone sync /home/pi/pi_vids/ dropbox_remote:pi_vids -P' pi
     # echo "Sync'd folders"
 
     # wait
