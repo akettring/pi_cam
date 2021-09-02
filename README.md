@@ -11,7 +11,7 @@ Why would anyone want to do this instead of buying ?
 
 
 
-# Step 0. Prepare the pi
+## Step 0. Prepare the pi
 
 Buy a raspberry pi and whatever camera you like, USB or ribbon cable ... doesn't matter.
 Install the default Raspbian OS. Boot
@@ -24,7 +24,7 @@ mkdir /home/pi/pi_cam
 mkdir /home/pi/pi_pics
 mkdir /home/pi/pi_vids
 
-# Step 2. Set up the cam
+## Step 2. Set up the cam
 
 sudo apt install motion
 
@@ -52,7 +52,7 @@ sudo nano /etc/motion/motion.conf
 sudo motion -n
 
 
-# Step 3. sync using rclone
+## Step 3. sync using rclone
 
 sudo apt-get install rclone
 
