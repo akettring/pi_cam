@@ -41,6 +41,8 @@ The camera first dumps files into the pi_cam folder, then move_files.sh splits t
 The provided `motion.conf` has the following changes made:
 
     daemon on
+    process_id_file /home/pi/motion.pid
+    logfile /home/pi/motion.log    
     width 800
     height 600
     threshold 2000
