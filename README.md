@@ -116,7 +116,7 @@ Now set up the directories to receive files from the pi.
 
 The last step is to edit rc.local so that motion and rsync run at startup.
 
-    sudo cp /etc/rc.local ~/rc.local.bash
+    sudo cp /etc/rc.local ~/rc.local.bak
     sudo nano /etc/rc.local
 
 Add the following lines BEFORE `exit 0` as in the provided example:
