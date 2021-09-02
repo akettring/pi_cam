@@ -7,7 +7,8 @@ Why would anyone want to do this ?
 - Security. Sync to *multiple* cloud folders.
 - Budget. No monthly/yearly fees. Parts for under $100.
 - Edutainment. Learn about raspberry pi programming!
-    
+
+<img src="https://raw.githubusercontent.com/akettring/pi_cam/main/pi_cloud.png">
     
 These instructions cover syncing with Dropbox using rsync, which is surprisingly easy.
 
