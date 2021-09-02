@@ -18,14 +18,11 @@ I have also tested these instructions for Google Drive. There is no difference.
 
 Buy a raspberry pi and whatever camera you like, USB or ribbon cable.
 
-Install the default Raspbian OS. Boot and set up wifi.
+Install the default Raspbian OS.
 
-I suggest to enable SSH using `raspi-config` or in the preferences menu.
+Boot and set up wifi. I suggest to enable SSH using `raspi-config` or in the preferences menu.
 
-clone the contents of this git repo into your home directory.
-
-
-It may be necesseary to run 'chmod +x /home/pi/bin/ -Rv'
+Clone the contents of this git repo into your home directory. It may be necesseary to run `chmod +x /home/pi/bin/ -Rv`
 
 
 ## Step 1. Set up the cam
@@ -110,8 +107,9 @@ Now set up the directories to receive files from the pi.
     rclone mkdir dropbox_remote:pi_vids
 
 
-The last step is to 
+The last step is to edit rc.local
 
+    sudo cp /etc/rc.local ~/rc.local.bash
     sudo nano /etc/rc.local
 
 Add the following lines:
